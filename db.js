@@ -1,6 +1,6 @@
 const mongoose = require('mongoose');
 const {MONGO_URL} = require('./cofig/env')
-mongoose.connect('mongodb://localhost:27017/iti' ||  MONGO_URL,
+mongoose.connect( MONGO_URL || 'mongodb://localhost:27017/iti'),
 {
     useCreateIndex : true ,
     useNewUrlParser : true
