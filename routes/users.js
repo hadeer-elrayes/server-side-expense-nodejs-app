@@ -19,12 +19,12 @@ router.post('/register',  async (req, res, next)=>  {
 // login
 router.post('/authentication',  async (req, res, next)=>  {
   try{
-    const {username , password} = req.body;
+    const {email , password} = req.body;
     if(!email || !password)
     {
-      console.log('auth failed');;
+      console.log('auth failed');
     }
-    const user = await User.findOne({username});
+    const user = await User.findOne({email});
     if(!user) console.log('NOT FOUND');
   
   const isMatch = await user.verifyPassword(password);

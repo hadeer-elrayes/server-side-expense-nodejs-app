@@ -10,7 +10,7 @@
   "scripts": {
     "dev": "nodemon ./bin/www",
     "start": "node ./bin/www",
-    "debug": "DEBUG=e-commerce:server nodemon --inspect ."
+    "debug": "nodemon --inspect ."
   },
   "dependencies": {
     "bcrypt": "^3.0.5",

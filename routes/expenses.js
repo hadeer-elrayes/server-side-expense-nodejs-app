@@ -37,8 +37,12 @@ router.get('/allExpenses',async(req,res,next)=>{
 
 router.get('/allExpensesOfUser',async(req,res,next)=>{
     try{
-   const {user} = req ;
+   const {user} = req;
    const now =  new Date();
+
+   const month = parseInt(req.param.month)
+   now.setMonth(month);
+
    const firstDate = new Date(now.getFullYear(),now.getMonth(),1);
    const lastDate = new Date(now.getFullYear(),now.getMonth()+1,0);
    const query  = {owner  :user._id , created :{
